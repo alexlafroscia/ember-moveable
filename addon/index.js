@@ -4,6 +4,6 @@ export function mapTargetToMoveable(target, moveable) {
   ELEMENT_TO_MOVEABLE.set(target, moveable);
 }
 
-export function getMoveableForElement(target) {
+export function getMoveableForTarget(target) {
   return ELEMENT_TO_MOVEABLE.get(target);
 }

@@ -3,6 +3,7 @@ import Moveable, {
   EVENTS as EMITTED_EVENTS_ARRAY,
   PROPERTIES as ALLOWED_PROPERTIES_ARRAY,
 } from 'moveable';
+import { mapTargetToMoveable } from '..';
 
 const ALLOWED_EVENTS = new Set(EMITTED_EVENTS_ARRAY);
 const ALLOWED_PROPERTIES = new Set(ALLOWED_PROPERTIES_ARRAY);
@@ -54,6 +55,8 @@ export default class MoveableModifier extends Modifier {
       // Apply whitelisted properties to constructor
       ...this.properties,
     });
+
+    mapTargetToMoveable(this.element, this.moveable)
 
     const events = this.events;
 
